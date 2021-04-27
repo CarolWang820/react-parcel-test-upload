@@ -1,12 +1,14 @@
 import React from "react";
-
+import {csv} from "d3-fetch";
 
 const App = () => {
+    csv("https://github.com/CarolWang820/react-parcel-test-upload/blob/main/weather.csv")
+    .then((data) => console.log(data));
     return (
-        <svg style = {{border: "1px solid pink", width: 500, 
-        height: 500}}>
-            <circle cx="200" cy="200" r="5" />
-        </svg>
+        <div>
+            <h1>Exploratory Data Analysis, Assignment2, INFO474</h1>
+
+        </div>
     );
 };
 
