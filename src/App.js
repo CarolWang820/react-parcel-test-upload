@@ -1,5 +1,5 @@
 import React from "react";
-import { useFetch } from "./hooks/useFetch";
+import { useFetch } from "./hook/useFetch.js";
 import { scaleLinear}  from "d3-scale";
 import { extent, max, min, bin } from "d3-array";
 
@@ -11,12 +11,24 @@ const App = () => {
     const worldData = extent(data, (d) => {
         return +d["Ladder score"];
     });
+
+    const size = 500;
+    const margin = 20;
+    const yScale = scaleLinear()
+        .domain(worldData)  
+        .range([size - margin, size - 350]);
+
     return (
         <div>
-            <h1>Exploratory Data Analysis, Assignment2, INFO474</h1>
+            <h1>Exploratory Data Analysis, Assignment 2, INFO 474 SP 2021</h1>
+            <p>{loading && "Loading data!"}</p>
+
+            <h2>World countries analysis</h2>
+
 
         </div>
     );
+
 };
 
 export default App;
