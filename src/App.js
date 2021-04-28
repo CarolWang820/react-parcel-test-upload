@@ -1,5 +1,6 @@
 import React from "react";
 import {csv} from "d3-fetch";
+import { scaleLinear } from
 
 const App = () => {
     csv("https://github.com/CarolWang820/react-parcel-test-upload/blob/main/weather.csv")
